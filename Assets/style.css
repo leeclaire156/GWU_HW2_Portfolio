@@ -1,0 +1,115 @@
+:root {
+    --aboutbck: #00171F;
+    --abouttxt: #FFF;
+    --nav: #fdaffd;
+    --buttontext: #FFF;
+    --button: #332233;
+    --gradient0: #3177B8;
+    --gradient51: #1AA7DA;
+    --gradient100: #01DBFF;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/*Hyperlink formatting*/
+a:link {
+    text-decoration: none;
+    color: var(--nav);
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--nav);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+/*nav bar formatting*/
+nav>ul>li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/*Home formatting*/
+
+/**/
+
+#about {
+    background-color: var(--aboutbck);
+    color: var(--abouttxt);
+}
+
+/*Skills*/
+#skills {
+    display: grid;
+}
+
+
+/*Projects*/
+button {
+    width: 150px;
+    color: var(--buttontext);
+    background-image: linear-gradient(to right, var(--gradient0) 0%, var(--gradient51) 51%, var(--gradient100) 100%);
+    border: var(--button);
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+    /*Gets rid of underline when I anchor links to the button*/
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover,
+button:focus {
+    background-position: right center;
+    cursor: pointer;
+}
+
+.first {
+    display: block;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+    border: #00171F solid;
+}
+
+
+
+
+
+/* Makes cursor have a no-symbol when hovering over - For 
+cursor: not-allowed; */
+
+/*Phones*/
+@media screen and (max-width: 768px) {}
+
+/*Tablets*/
+@media screen and (min-width: 768px) {}
+
+/*Desktop*/
+@media screen and (min-width: 992px) {}
+
+/*Contact Me*/
