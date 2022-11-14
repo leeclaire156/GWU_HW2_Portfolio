@@ -9,10 +9,46 @@
     --gradient100: #01DBFF;
 }
 
+/*Grid system set-up*/
 * {
+    /* box-sizing accounts for the border and padding along with the content size when defining and item's height and width. */
     box-sizing: border-box;
     font-family: sans-serif;
+    margin: 5px;
+    padding: 5px;
 }
+
+.container {
+    display: grid;
+    /*vh stands for viewport height*/
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .2fr 1fr 1fr 2fr .8fr;
+    grid-template-areas: "nav nav nav nav" "home home home home" "about about about about" "projects projects projects projects" "contact contact contact contact";
+    grid-gap: 0.2rem;
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#home {
+    grid-area: home;
+}
+
+#about {
+    border: solid;
+    grid-area: about;
+}
+
+#projects {
+    grid-area: projects;
+}
+
+#contact {
+    grid-area: contact;
+}
+
 
 /*Hyperlink formatting*/
 a:link {
@@ -34,6 +70,7 @@ a:active {
 }
 
 /*nav bar formatting*/
+
 nav>ul>li {
     list-style: none;
 }
@@ -41,22 +78,26 @@ nav>ul>li {
 ul {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    width: 100vh;
 }
 
 
 /*Home formatting*/
 
-/**/
+/*About*/
 
 #about {
     background-color: var(--aboutbck);
     color: var(--abouttxt);
+    /* display: grid; */
 }
 
-/*Skills*/
-#skills {
+
+/*Skills - Future Update*/
+/* #skills {
     display: grid;
-}
+} */
 
 
 /*Projects*/
@@ -86,7 +127,7 @@ button:focus {
     display: block;
 }
 
-.project {
+#projects {
     display: flex;
     flex-direction: column;
     justify-content: center;

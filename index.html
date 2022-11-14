@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <div class="container">
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -22,56 +22,56 @@
                 <!-- <li><a class="resume" href="#" target="_blank" rel="noopener noreferrer">Resume</a></li> -->
             </ul>
         </nav>
-    </header>
 
-    <section id="home">
-        <h1>Hi my name is Claire. Nice to meet you!</h1>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <article>Hi, I was a Chemistry and Biology major in my undergrad but have always shined when allowed to be
-            creative in school projects. A year into my graduate research journey at The Ohio State University's food
-            science
-            program, I decided that it wasn't for me and that I desired a career that better balanced creativity and
-            problem-solving skills. I hope that
-            you'll follow along as I develop websites and myself.
-            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGUWoaKUKHksg/profile-displayphoto-shrink_200_200/0/1616515294451?e=1673481600&v=beta&t=KW4fN-hyTrdpbPgDOakq9tuGsZWjhW2E7XZQDmeUUCY"
-                alt-text="Image of Claire Lee">
-        </article>
-
-    </section>
-
-    <!--
-    <section id="skills">
-        <h2>Skills</h2>
-
-    </section> -->
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <section class="first project">
-            <figure>
-                <img src="./Assets/Latest_Project.PNG" alt-text="CSS Snippet Cheatsheet Project">
-                <figcaption>CSS Snippet Cheatsheet Project</figcaption>
-                <p>This project was a collaborative effort to display a collection of Cascading Style Sheet (CSS)
-                    concepts on a single responsive webpage as a way to study and put into practice CSS concepts. </p>
-            </figure>
-            <div class="buttons">
-                <a href="https://suvarna28.github.io/CSS-Snippet-Cheatsheet/" target="_blank" rel="noreferrer">
-                    <button>Live Demo</button>
-                </a>
-                <a href="https://github.com/suvarna28/CSS-Snippet-Cheatsheet" target="_blank" rel="noreferrer">
-                    <button>&#60;Code&#62;</button>
-                </a>
-            </div>
+        <section id="home">
+            <h1>Hi my name is Claire. Nice to meet you!</h1>
         </section>
 
+        <section id="about">
+            <h2>About Me</h2>
+            <article>Hi there! I have a background in Chemistry and Biology
+                but
+                have always
+                shined best when allowed to be
+                creative in school projects. A year into my graduate research journey at The Ohio State University's
+                food
+                science
+                program, I decided that it wasn't for me and that I desired a career that better balanced creativity and
+                problem-solving skills. Please follow me as I develop websites and myself.
+            </article>
+            <img class="about" id="AMpic"
+                src="https://media-exp1.licdn.com/dms/image/C4E03AQGUWoaKUKHksg/profile-displayphoto-shrink_200_200/0/1616515294451?e=1673481600&v=beta&t=KW4fN-hyTrdpbPgDOakq9tuGsZWjhW2E7XZQDmeUUCY"
+                alt-text="Image of Claire Lee">
+        </section>
 
-        <section class="other projects">
+        <!-- Future Update
+        <section id="skills">
+            <h2>Skills</h2>
+    
+        </section> -->
 
-            <section class="second project">
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <section id="first">
+                <figure>
+                    <img src="./Assets/Latest_Project.PNG" alt-text="CSS Snippet Cheatsheet Project">
+                    <figcaption>CSS Snippet Cheatsheet Project</figcaption>
+                    <p>This project was a collaborative effort to display a collection of Cascading Style Sheet (CSS)
+                        concepts on a single responsive webpage as a way to study and put into practice CSS concepts.
+                    </p>
+                </figure>
+                <div class="buttons">
+                    <a href="https://suvarna28.github.io/CSS-Snippet-Cheatsheet/" target="_blank" rel="noreferrer">
+                        <button>Live Demo</button>
+                    </a>
+                    <a href="https://github.com/suvarna28/CSS-Snippet-Cheatsheet" target="_blank" rel="noreferrer">
+                        <button>&#60;Code&#62;</button>
+                    </a>
+                </div>
+            </section>
+
+            <section id="second">
                 <h3>Horiseon Accessibility and SEO Project</h3>
                 <figure>
                     <img src="./Assets/Second_Project.PNG" alt-text="Accessibility and SEO Project">
@@ -92,7 +92,7 @@
                 </div>
             </section>
 
-            <section class="third project">
+            <section id="third">
                 <h3>Coming Soon</h3>
                 <figure>
                     <img src="./Assets/ComingSoon.svg" alt-text="Construction of House">
@@ -108,7 +108,7 @@
                 </div>
             </section>
 
-            <section class="fourth project">
+            <section id="fourth">
                 <h3>Coming Soon</h3>
                 <figure>
                     <img src="./Assets/ComingSoon.svg" alt-text="Construction of House">
@@ -124,7 +124,7 @@
                 </div>
             </section>
 
-            <section class="fifth project">
+            <section id="fifth">
                 <h3>Coming Soon</h3>
                 <figure>
                     <img src="./Assets/ComingSoon.svg" alt-text="Construction of House">
@@ -139,31 +139,32 @@
                     </a>
                 </div>
             </section>
+
+
 
         </section>
 
-    </section>
-
-    <section id="contact-me">
-        <h2 id="Contact-Header">Contact Me</h2>
-        <ul id="Contact-Links">
-            <li>
-                <strong class="Links">Email: </strong>
-                <a href="mailto: lee.claire156@gmail.com">lee.claire156@gmail.com</a>
-            </li>
-            <li>
-                <strong class="Links">GitHub: </strong>
-                <a href="https://github.com/leeclaire156" target="_blank" rel="noreferrer"><i
-                        style="font-size:24px; color:blue" class="fa">&#xf09b;</i></a>
-            </li>
-            <li>
-                <strong class="Links">LinkedIn: </strong>
-                <a href="https://www.linkedin.com/in/claire-lee-556b3a209/" target="_blank" rel="noreferrer">Let's
-                    Connect</a>
-            </li>
-        </ul>
-    </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <ul>
+                <li>
+                    <strong class="Links">Email: </strong>
+                    <a href="mailto: lee.claire156@gmail.com">lee.claire156@gmail.com</a>
+                </li>
+                <li>
+                    <strong class="Links">GitHub: </strong>
+                    <a href="https://github.com/leeclaire156" target="_blank" rel="noreferrer"><i
+                            style="font-size:24px; color:blue" class="fa">&#xf09b;</i></a>
+                </li>
+                <li>
+                    <strong class="Links">LinkedIn: </strong>
+                    <a href="https://www.linkedin.com/in/claire-lee-556b3a209/" target="_blank" rel="noreferrer">Let's
+                        Connect</a>
+                </li>
+            </ul>
+        </section>
 
 </body>
 
 </html>
+</div>
