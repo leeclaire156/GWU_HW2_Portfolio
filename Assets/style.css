@@ -7,6 +7,16 @@
     --gradient0: #3177B8;
     --gradient51: #1AA7DA;
     --gradient100: #01DBFF;
+    /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
+    font-size: 62.5%;
+}
+
+h2, h3{
+    font-size: 3rem;
+}
+
+figcaption, article {
+font-size: 2.5rem;
 }
 
 /*Hyperlink formatting*/
@@ -68,9 +78,11 @@ ul {
     grid-area: 1 / 1 / span 1 / span 4;
 }
 
+/*This CSS applies to both the header/nav and the footer since they both have li tags!!!*/
 li {
     list-style: none;
     margin-right: 2rem;
+    font-size: 2.5rem;
 }
 
 
@@ -88,12 +100,13 @@ li {
 
 #home {
     grid-area: 2 / 1 / span 1 / span 4;
-    padding: 50px;
+    padding: 150px 50px;
     display: flex;
     justify-content: center;
     text-align: center;
     /*1.5s is the keyframes duration, "ease-in" is a type of easing function, followed by the delay (in this case we don't want a delay so it's 0s, 1 dictates the amount of times to play the animation (aka animation-iteration-count), and finally home is the name of the play-state. */
     animation: 1.5s ease-in 0s 1 home;
+    font-size: 4rem;
 }
 
 /*About*/
@@ -126,7 +139,7 @@ button {
     flex-grow: 1;
     /*Gets rid of underline when I anchor links to the button*/
     text-decoration: none;
-    font-size: 16px;
+    font-size: 2.5rem;
 }
 
 button:hover,
@@ -230,10 +243,12 @@ cursor: not-allowed; */
 #contact {
     grid-area: 5 / 1 / span 1 / span 4;
 }
-#contact > *
-{ border: #00171F solid;}
 
-#contactheader{
+#contact>* {
+    border: #00171F solid;
+}
+
+#contactheader {
     display: flex;
     justify-content: center;
     text-align: center;
