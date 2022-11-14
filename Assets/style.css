@@ -1,7 +1,7 @@
 :root {
     --aboutbck: #00171F;
     --abouttxt: #FFF;
-    --nav: #fdaffd;
+    --nav: #10128f;
     --buttontext: #FFF;
     --button: #332233;
     --gradient0: #3177B8;
@@ -11,13 +11,16 @@
     font-size: 62.5%;
 }
 
-h2, h3{
+h2,
+h3 {
     font-size: 3rem;
 }
 
-figcaption, article {
-font-size: 2.5rem;
+figcaption,
+article {
+    font-size: 2.5rem;
 }
+
 
 /*Hyperlink formatting*/
 a:link {
@@ -38,17 +41,8 @@ a:active {
     text-decoration: none;
 }
 
-/*By having the ul box be displayed to flex and the flex-direction set to row, the li contents inside are no longer a column but are now a row.*/
-/*This CSS applies to both the header/nav and the footer since they both have ul tags!!!*/
-ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
 
-}
-
-/*Grid system set-up*/
+/*Grid system set-up for webpage in desktop form.*/
 * {
     /* box-sizing accounts for the border and padding along with the content size when defining and item's height and width. */
     box-sizing: border-box;
@@ -71,23 +65,32 @@ ul {
 
 /*nav bar formatting*/
 #nav {
-    grid-area: 1 / 1 / span 1 / span 4;
+    grid-area: 1 / 1 / span 4 / span 4;
 }
 
 #nav>ul {
-    grid-area: 1 / 1 / span 1 / span 4;
+    grid-area: 1 / 1 / span 4 / span 4;
+}
+
+/*This CSS applies to both the header/nav and the footer since they both have ul tags!!!*/
+ul {
+    /*By having the ul box be displayed to flex and the flex-direction set to row, the li contents inside are no longer a column but are now a row.*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+
 }
 
 /*This CSS applies to both the header/nav and the footer since they both have li tags!!!*/
 li {
     list-style: none;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     font-size: 2.5rem;
 }
 
 
 /*Home formatting*/
-
 @keyframes home {
     0% {
         transform: translateX(-100%);
@@ -109,8 +112,8 @@ li {
     font-size: 4rem;
 }
 
-/*About*/
 
+/*About*/
 #about {
     grid-area: 3 / 1 / span 1 / span 4;
     background-color: var(--aboutbck);
@@ -124,18 +127,18 @@ li {
     align-items: center;
 }
 
-#aboutheader{
+#about-header {
     grid-area: 1 / 1 / span 1 / span 2;
     text-align: center;
 }
 
-#intro{
+#intro {
     grid-area: 2 / 1 / span 1 / span 1;
     font-size: 2rem;
     line-height: 2;
 }
 
-#me{
+#me {
     grid-area: 2 / 2 / span 1 / span 1;
     display: flex;
     padding: 8rem;
@@ -145,16 +148,15 @@ li {
     align-items: center;
 }
 
+
 /*Skills - Future Update*/
 /* #skills {
     display: grid;
 } */
 
-#projects {
-    grid-area: 4 / 1 / span 1 / span 4;
-}
-
 /*Projects*/
+
+/*This section deals with the visual appearance of all buttons.*/
 button {
     /* width: 150px; */
     color: var(--buttontext);
@@ -175,6 +177,10 @@ button:focus {
     cursor: pointer;
 }
 
+
+/* Makes cursor have a no-symbol when hovering over - For 
+cursor: not-allowed; */
+
 .soon {
     width: 300px;
     height: 300px;
@@ -187,16 +193,18 @@ button:focus {
 
 /*-----------------------------------------------*/
 #projects {
+    /*This sets up the area the Projects section will take up from the container grid system.*/
+    grid-area: 4 / 1 / span 1 / span 4;
     border: #00171F solid;
-    /*Sets the Projects area to be a grid system with four evenly-split columns and 3 rows with a short top row and a larger middle row.*/
+    /*Sets the Projects area to be its own grid system with four evenly-split columns and 3 rows with a short top row and a larger middle row.*/
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.2fr 1.5fr 1fr;
     grid-gap: 0.2rem;
 }
 
-#projectheader {
-    /*Short hand notation dictating the "projectheader" starts on row 1, column 1, and spans 1 row and 4 columns */
+#project-header {
+    /*Short hand notation dictating the "project-header" starts on row 1, column 1, and spans 1 row and 4 columns from the Projects section grid system.*/
     grid-area: 1 / 1 / span 1 / span 4;
     display: flex;
     flex-direction: column;
@@ -232,6 +240,7 @@ button:focus {
     text-align: center;
 }
 
+
 #fourth {
     grid-area: 3 / 3 / span 1 / span 1;
     display: flex;
@@ -253,8 +262,7 @@ button:focus {
     border: blue solid;
 }
 
-/* Makes cursor have a no-symbol when hovering over - For 
-cursor: not-allowed; */
+
 
 /*Phones*/
 @media screen and (max-width: 768px) {}
@@ -266,16 +274,11 @@ cursor: not-allowed; */
 @media screen and (min-width: 992px) {}
 
 /*Contact Me*/
-
 #contact {
     grid-area: 5 / 1 / span 1 / span 4;
 }
 
-#contact>* {
-    border: #00171F solid;
-}
-
-#contactheader {
+#contact-header {
     display: flex;
     justify-content: center;
     text-align: center;
