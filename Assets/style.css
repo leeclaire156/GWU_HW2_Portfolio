@@ -33,8 +33,9 @@ a:active {
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
+
 }
 
 /*Grid system set-up*/
@@ -60,6 +61,10 @@ ul {
 
 /*nav bar formatting*/
 #nav {
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+#nav>ul {
     grid-area: 1 / 1 / span 1 / span 4;
 }
 
@@ -91,36 +96,23 @@ li {
     animation: 1.5s ease-in 0s 1 home;
 }
 
-#about {
-    grid-area: 3 / 1 / span 1 / span 4;
-}
-
-#projects {
-    grid-area: 4 / 1 / span 1 / span 4;
-}
-
-#contact {
-    grid-area: 5 / 1 / span 1 / span 4;
-}
-
-
-
-
-
 /*About*/
 
 #about {
+    grid-area: 3 / 1 / span 1 / span 4;
     background-color: var(--aboutbck);
     color: var(--abouttxt);
     /* display: grid; */
 }
-
 
 /*Skills - Future Update*/
 /* #skills {
     display: grid;
 } */
 
+#projects {
+    grid-area: 4 / 1 / span 1 / span 4;
+}
 
 /*Projects*/
 button {
@@ -221,10 +213,6 @@ button:focus {
     border: blue solid;
 }
 
-
-
-
-
 /* Makes cursor have a no-symbol when hovering over - For 
 cursor: not-allowed; */
 
@@ -238,3 +226,15 @@ cursor: not-allowed; */
 @media screen and (min-width: 992px) {}
 
 /*Contact Me*/
+
+#contact {
+    grid-area: 5 / 1 / span 1 / span 4;
+}
+#contact > *
+{ border: #00171F solid;}
+
+#contactheader{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
