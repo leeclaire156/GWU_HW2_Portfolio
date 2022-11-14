@@ -9,47 +9,6 @@
     --gradient100: #01DBFF;
 }
 
-/*Grid system set-up*/
-* {
-    /* box-sizing accounts for the border and padding along with the content size when defining and item's height and width. */
-    box-sizing: border-box;
-    font-family: sans-serif;
-    margin: 5px;
-    padding: 5px;
-}
-
-.container {
-    display: grid;
-    /*vh stands for viewport height*/
-    height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: .2fr 1fr 1fr 2fr .8fr;
-    grid-template-areas: "nav nav nav nav" "home home home home" "about about about about" "projects projects projects projects" "contact contact contact contact";
-    grid-gap: 0.2rem;
-}
-
-#nav {
-    grid-area: nav;
-}
-
-#home {
-    grid-area: home;
-}
-
-#about {
-    border: solid;
-    grid-area: about;
-}
-
-#projects {
-    grid-area: projects;
-}
-
-#contact {
-    grid-area: contact;
-}
-
-
 /*Hyperlink formatting*/
 a:link {
     text-decoration: none;
@@ -69,21 +28,84 @@ a:active {
     text-decoration: none;
 }
 
-/*nav bar formatting*/
-
-nav>ul>li {
-    list-style: none;
-}
-
+/*By having the ul box be displayed to flex and the flex-direction set to row, the li contents inside are no longer a column but are now a row.*/
+/*This CSS applies to both the header/nav and the footer since they both have ul tags!!!*/
 ul {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+/*Grid system set-up*/
+* {
+    /* box-sizing accounts for the border and padding along with the content size when defining and item's height and width. */
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 5px;
+    padding: 5px;
+    /* border: 1px solid; */
+}
+
+.container {
+    display: grid;
+    /*vh stands for viewport height*/
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .2fr 1fr 1fr 2fr .8fr;
+    grid-gap: 0.2rem;
+}
+
+
+/*nav bar formatting*/
+#nav {
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+li {
+    list-style: none;
+    margin-right: 2rem;
 }
 
 
 /*Home formatting*/
+
+@keyframes home {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#home {
+    grid-area: 2 / 1 / span 1 / span 4;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /*1.5s is the keyframes duration, "ease-in" is a type of easing function, followed by the delay (in this case we don't want a delay so it's 0s, 1 dictates the amount of times to play the animation (aka animation-iteration-count), and finally home is the name of the play-state. */
+    animation: 1.5s ease-in 0s 1 home;
+}
+
+#about {
+    grid-area: 3 / 1 / span 1 / span 4;
+}
+
+#projects {
+    grid-area: 4 / 1 / span 1 / span 4;
+}
+
+#contact {
+    grid-area: 5 / 1 / span 1 / span 4;
+}
+
+
+
+
 
 /*About*/
 
@@ -102,18 +124,16 @@ ul {
 
 /*Projects*/
 button {
-    width: 150px;
+    /* width: 150px; */
     color: var(--buttontext);
     background-image: linear-gradient(to right, var(--gradient0) 0%, var(--gradient51) 51%, var(--gradient100) 100%);
     border: var(--button);
     border-radius: 10px;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 10px;
-    text-align: center;
-    align-items: center;
+    flex-grow: 1;
     /*Gets rid of underline when I anchor links to the button*/
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
 }
 
@@ -123,18 +143,82 @@ button:focus {
     cursor: pointer;
 }
 
-.first {
-    display: block;
+.soon {
+    width: 300px;
+    height: 300px;
 }
 
+.thumbnail {
+    width: 900px;
+    height: 500px;
+}
+
+/*-----------------------------------------------*/
 #projects {
+    border: #00171F solid;
+    /*Sets the Projects area to be a grid system with four evenly-split columns and 3 rows with a short top row and a larger middle row.*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1fr;
+    grid-gap: 0.2rem;
+}
+
+#projectheader {
+    /*Short hand notation dictating the "projectheader" starts on row 1, column 1, and spans 1 row and 4 columns */
+    grid-area: 1 / 1 / span 1 / span 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 2%;
-    margin: 2%;
-    border: #00171F solid;
+    text-align: center;
+}
+
+#first {
+    /*Short hand notation dictating the "first" project box starts on row 2, column 1, and spans 1 row and 4 columns */
+    grid-area: 2 / 1 / span 1 / span 4;
+    display: flex;
+    /* Sets contents to be stacked in a column rather than the default row orientation. */
+    flex-direction: column;
+    /* Sets contents (h3 header, figure [including img], and buttons) to the center along the main (in this case, since we set the flex-direction to column, vertical) axis of the "first" project box */
+    justify-content: center;
+    /* Sets contents (h3, figure [including img], and buttons) from the default left margin to the center along the horizontal axis.*/
+    text-align: center;
+}
+
+#second {
+    grid-area: 3 / 1 / span 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#third {
+    grid-area: 3 / 2 / span 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#fourth {
+    grid-area: 3 / 3 / span 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#fifth {
+    grid-area: 3 / 4 / span 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#projects>* {
+    border: blue solid;
 }
 
 

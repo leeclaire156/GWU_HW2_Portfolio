@@ -4,6 +4,7 @@ Week 2 Assignment from George Washington University's Full Stack Development Boo
 992px< = desktop 768px< = tablet 768px> = phone
 
 Coming Soon SVG belongs to Undraw https://undraw.co/search
+grid area tutorial: https://www.w3schools.com/cssref/pr_grid-area.php
 
 # 02 Advanced CSS: Portfolio
 
