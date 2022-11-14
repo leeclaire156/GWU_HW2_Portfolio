@@ -115,7 +115,34 @@ li {
     grid-area: 3 / 1 / span 1 / span 4;
     background-color: var(--aboutbck);
     color: var(--abouttxt);
-    /* display: grid; */
+    display: grid;
+    padding: 1rem;
+    width: 100%;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: .2fr 1fr;
+    grid-gap: 0.2rem;
+    align-items: center;
+}
+
+#aboutheader{
+    grid-area: 1 / 1 / span 1 / span 2;
+    text-align: center;
+}
+
+#intro{
+    grid-area: 2 / 1 / span 1 / span 1;
+    font-size: 2rem;
+    line-height: 2;
+}
+
+#me{
+    grid-area: 2 / 2 / span 1 / span 1;
+    display: flex;
+    padding: 8rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 /*Skills - Future Update*/
