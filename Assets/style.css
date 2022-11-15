@@ -130,7 +130,7 @@ li {
 }
 
 #me {
-    /* This makes the About Me section article start at row 2, column 1 and have it span for 1 row and 1 column. */
+    /* This makes the About Me section article start at row 2, column 2 and have it span for 1 row and 1 column. */
     grid-area: 2 / 2 / span 1 / span 1;
     display: flex;
     justify-content: center;
@@ -140,7 +140,42 @@ li {
 }
 
 /*About me section for Phones - make it a column with header, picture, then article.*/
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    #about {
+        /* This sets up the grid system for the About Me section on phones. It will include the header (#about-header), introductory article (#intro), and the profile picture (#me). */
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 0.2rem;
+        align-items: center;
+    }
+    
+    #about-header {
+        /* This makes the About Me section header start at row 1, column 1 and have it span for 1 row and 1 columns. */
+        grid-area: 1 / 1 / span 1 / span 1;
+        text-align: center;
+    }
+    
+    #intro {
+        /* This makes the About Me section article start at row 3, column 1 and have it span for 1 row and 1 column. */
+        grid-area: 3 / 1 / span 1 / span 1;
+        font-size: 2rem;
+        line-height: 2;
+        padding: 2rem;
+    }
+    
+    #me {
+        /* This makes the About Me section article start at row 2, column 1 and have it span for 1 row and 1 column. */
+        grid-area: 2 / 1 / span 1 / span 1;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        justify-self: center;
+    }
+
+}
 
 /*Projects*/
 
