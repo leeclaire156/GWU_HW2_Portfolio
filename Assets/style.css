@@ -229,13 +229,13 @@ button:focus {
     justify-content: center;
     /* Sets contents (h3, figure [including img], and buttons) from the default left margin to the center along the horizontal axis.*/
     text-align: center;
-    border: var(--aboutbck) solid;
+    border: var(--dark-background) solid;
     border-radius: 10px;
 }
 
 /*This affects the project cards below the first one (Projects 2-5).*/
 #other-projects>* {
-    border: var(--aboutbck) solid;
+    border: var(--dark-background) solid;
     border-radius: 10px;
 }
 
