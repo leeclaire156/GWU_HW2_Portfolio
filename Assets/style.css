@@ -49,29 +49,14 @@ a:active {
     font-family: sans-serif;
     margin: 5px;
     padding: 5px;
-    /* border: 1px solid; */
 }
 
 .container {
-    display: grid;
-    /*vh stands for viewport height*/
-    height: 100vh;
-    width: 100vw;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: .2fr 1fr 1fr 2fr .8fr;
-    grid-gap: 0.2rem;
+    display: flex;
+    flex-direction: column;
 }
-
 
 /*nav bar formatting*/
-#nav {
-    grid-area: 1 / 1 / span 4 / span 4;
-}
-
-#nav>ul {
-    grid-area: 1 / 1 / span 4 / span 4;
-}
-
 /*This CSS applies to both the header/nav and the footer since they both have ul tags!!!*/
 ul {
     /*By having the ul box be displayed to flex and the flex-direction set to row, the li contents inside are no longer a column but are now a row.*/
@@ -84,30 +69,33 @@ ul {
 
 /*This CSS applies to both the header/nav and the footer since they both have li tags!!!*/
 li {
+    /*This gets rid of the bullet/circles that you see in unordered lists*/
     list-style: none;
-    /* margin-right: 2rem; */
     font-size: 2.5rem;
 }
 
 
 /*Home formatting*/
 @keyframes home {
+
+    /*Starts the text "Hi, my name is Claire. Nice to meet you!" text off screen to the left before you load.*/
     0% {
         transform: translateX(-100%);
     }
 
+    /*Has the text "Hi, my name is Claire. Nice to meet you!" text on screen by the end (100%) of the animation.*/
     100% {
         transform: translateX(0);
     }
 }
 
 #home {
-    grid-area: 2 / 1 / span 1 / span 4;
     padding: 150px 50px;
     display: flex;
     justify-content: center;
     text-align: center;
     /*1.5s is the keyframes duration, "ease-in" is a type of easing function, followed by the delay (in this case we don't want a delay so it's 0s, 1 dictates the amount of times to play the animation (aka animation-iteration-count), and finally home is the name of the play-state. */
+    /*This determines how long the animation is and how it shows up. In this case, the animation will run once as the page loads, for 1.5 seconds, with the text easing in.*/
     animation: 1.5s ease-in 0s 1 home;
     font-size: 4rem;
 }
@@ -115,44 +103,44 @@ li {
 
 /*About*/
 #about {
-    grid-area: 3 / 1 / span 1 / span 4;
     background-color: var(--aboutbck);
     color: var(--abouttxt);
+    /* This sets up the grid system for the About Me section. It will include the header (#about-header), introductory article (#intro), and the profile picture (#me). */
     display: grid;
-    padding: 1rem;
+    padding: 3rem;
     width: 100%;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: .2fr 1fr;
     grid-gap: 0.2rem;
     align-items: center;
 }
 
 #about-header {
+    /* This makes the About Me section header start at row 1, column 1 and have it span for 1 row and 2 columns. */
     grid-area: 1 / 1 / span 1 / span 2;
     text-align: center;
 }
 
 #intro {
+    /* This makes the About Me section article start at row 2, column 1 and have it span for 1 row and 1 column. */
     grid-area: 2 / 1 / span 1 / span 1;
     font-size: 2rem;
     line-height: 2;
+    padding: 2rem;
 }
 
 #me {
+    /* This makes the About Me section article start at row 2, column 1 and have it span for 1 row and 1 column. */
     grid-area: 2 / 2 / span 1 / span 1;
     display: flex;
-    padding: 8rem;
-    width: 100%;
     justify-content: center;
     text-align: center;
     align-items: center;
+    justify-self: center;
 }
 
-
-/*Skills - Future Update*/
-/* #skills {
-    display: grid;
-} */
+/*About me section for Phones - make it a column with header, picture, then article.*/
+@media screen and (max-width: 768px) {}
 
 /*Projects*/
 
@@ -193,11 +181,9 @@ cursor: not-allowed; */
 
 /*-----------------------------------------------*/
 #projects {
-    /*This sets up the area the Projects section will take up from the container grid system.*/
-    grid-area: 4 / 1 / span 1 / span 4;
     border: #00171F solid;
     /*Sets the Projects area to be its own grid system with four evenly-split columns and 3 rows with a short top row and a larger middle row.*/
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.2fr 1.5fr 1fr;
     grid-gap: 0.2rem;
@@ -210,6 +196,16 @@ cursor: not-allowed; */
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+#first,
+#second,
+#third,
+#fourth,
+#fifth {
+    width: 100%;
+    text-align: center;
+    /* flex-shrink: 1; */
 }
 
 #first {
@@ -262,8 +258,6 @@ cursor: not-allowed; */
     border: blue solid;
 }
 
-
-
 /*Phones*/
 @media screen and (max-width: 768px) {}
 
@@ -274,10 +268,6 @@ cursor: not-allowed; */
 @media screen and (min-width: 992px) {}
 
 /*Contact Me*/
-#contact {
-    grid-area: 5 / 1 / span 1 / span 4;
-}
-
 #contact-header {
     display: flex;
     justify-content: center;
