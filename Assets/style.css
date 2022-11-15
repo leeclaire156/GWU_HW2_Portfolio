@@ -1,9 +1,9 @@
 :root {
-    --aboutbck: #00171F;
-    --abouttxt: #FFF;
+    --dark-background: #00171F;
+    --white-text: #FFF;
     --nav: #10128f;
-    --buttontext: #FFF;
-    --button: #332233;
+    --button-text: #FFF;
+    --button: #252233;
     --gradient0: #3177B8;
     --gradient51: #1AA7DA;
     --gradient100: #01DBFF;
@@ -28,12 +28,12 @@ article {
 /*Hyperlink formatting*/
 a:link {
     text-decoration: none;
-    color: var(--nav);
+    color: var(--gradient0);
 }
 
 a:visited {
     text-decoration: none;
-    color: var(--nav);
+    color: var(--gradient0);
 }
 
 a:hover {
@@ -104,8 +104,8 @@ li {
 
 /*About Me Section Formatting*/
 #about {
-    background-color: var(--aboutbck);
-    color: var(--abouttxt);
+    background-color: var(--dark-background);
+    color: var(--white-text);
     /* This sets up the grid system for the About Me section. It will include the header (#about-header), introductory article (#intro), and the profile picture (#me). */
     display: grid;
     padding: 3rem;
@@ -182,7 +182,7 @@ li {
 /*This section deals with the visual appearance of all buttons.*/
 button {
     /* width: 150px; */
-    color: var(--buttontext);
+    color: var(--button-text);
     background-image: linear-gradient(to right, var(--gradient0) 0%, var(--gradient51) 51%, var(--gradient100) 100%);
     border: var(--button);
     border-radius: 10px;
@@ -383,8 +383,17 @@ button:focus {
 }
 
 /*Contact Me Section Formatting*/
+#contact {
+    background-color: var(--dark-background);
+    color: var(--white-text);
+}
+
 #contact-header {
     text-align: center;
+}
+
+#contact>ul>li {
+    color: var(--white-text)
 }
 
 /*Contact Me Section Responsiveness - Tablets and phones*/
