@@ -377,3 +377,26 @@ button:focus {
     justify-content: center;
     text-align: center;
 }
+
+
+/*Contact Me Section - Tablets and phones*/
+@media screen and (max-width: 992px) {
+    #contact>ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+
+    #email {
+        display: flex;
+    }
+
+    #github {
+        display: flex;
+    }
+
+    #linkedin {
+        display: flex;
+    }
+}
