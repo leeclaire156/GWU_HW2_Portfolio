@@ -11,7 +11,10 @@
     font-size: 62.5%;
 }
 
-h2,
+h2 {
+    font-size: 4rem;
+}
+
 h3 {
     font-size: 3rem;
 }
@@ -41,8 +44,6 @@ a:active {
     text-decoration: none;
 }
 
-
-/*Grid system set-up for webpage in desktop form.*/
 * {
     /* box-sizing accounts for the border and padding along with the content size when defining and item's height and width. */
     box-sizing: border-box;
@@ -56,7 +57,7 @@ a:active {
     flex-direction: column;
 }
 
-/*nav bar formatting*/
+/*Nav Bar formatting*/
 /*This CSS applies to both the header/nav and the footer since they both have ul tags!!!*/
 ul {
     /*By having the ul box be displayed to flex and the flex-direction set to row, the li contents inside are no longer a column but are now a row.*/
@@ -75,7 +76,7 @@ li {
 }
 
 
-/*Home formatting*/
+/*Home Section formatting*/
 @keyframes home {
 
     /*Starts the text "Hi, my name is Claire. Nice to meet you!" text off screen to the left before you load.*/
@@ -101,7 +102,7 @@ li {
 }
 
 
-/*About*/
+/*About Me Section Formatting*/
 #about {
     background-color: var(--aboutbck);
     color: var(--abouttxt);
@@ -177,11 +178,7 @@ li {
 
 }
 
-/*Projects*/
-#projects > * {
-    border: #01DBFF;
-}
-
+/*Projects Section Formatting*/
 /*This section deals with the visual appearance of all buttons.*/
 button {
     /* width: 150px; */
@@ -210,41 +207,24 @@ button:focus {
 }
 
 .coming-soon {
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    height: auto;
 }
 
-/*-----------------------------------------------*/
+/*This section deals with the grid-system for the project cards.*/
 #projects {
-    border: #00171F solid;
-    /*Sets the Projects area to be its own grid system with four evenly-split columns and 3 rows with a short top row and a larger middle row.*/
-    /* display: grid; */
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1fr;
-    grid-gap: 0.2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 #project-header {
-    /*Short hand notation dictating the "project-header" starts on row 1, column 1, and spans 1 row and 4 columns from the Projects section grid system.*/
-    grid-area: 1 / 1 / span 1 / span 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-#first,
-#second,
-#third,
-#fourth,
-#fifth {
-    width: 100%;
-    text-align: center;
-}
-
 #first {
-    /*Short hand notation dictating the "first" project box starts on row 2, column 1, and spans 1 row and 4 columns */
-    grid-area: 2 / 1 / span 1 / span 4;
     display: flex;
     /* Sets contents to be stacked in a column rather than the default row orientation. */
     flex-direction: column;
@@ -252,56 +232,146 @@ button:focus {
     justify-content: center;
     /* Sets contents (h3, figure [including img], and buttons) from the default left margin to the center along the horizontal axis.*/
     text-align: center;
+    border: var(--aboutbck) solid;
+    border-radius: 10px;
 }
 
-#second {
-    grid-area: 3 / 1 / span 1 / span 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+/*This affects the project cards below the first one (Projects 2-5).*/
+#other-projects>* {
+    border: var(--aboutbck) solid;
+    border-radius: 10px;
 }
 
-#third {
-    grid-area: 3 / 2 / span 1 / span 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+/*Desktop layout*/
+@media screen and (min-width: 992px) {
+    #other-projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0.2rem;
+        /* flex-shrink: 1; */
+    }
+
+    #second {
+        grid-area: 1 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #third {
+        grid-area: 1 / 2 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #fourth {
+        grid-area: 1 / 3 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #fifth {
+        grid-area: 1 / 4 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 
-#fourth {
-    grid-area: 3 / 3 / span 1 / span 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+/*Tablet layout*/
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #other-projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.2rem;
+    }
+
+    #second {
+        grid-area: 1 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #third {
+        grid-area: 1 / 2 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #fourth {
+        grid-area: 2 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #fifth {
+        grid-area: 2 / 2 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
-#fifth {
-    grid-area: 3 / 4 / span 1 / span 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+/*Phone layout*/
+@media screen and (max-width: 768px) {
+    #other-projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+
+    #second {
+        grid-area: 1 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #third {
+        grid-area: 2 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #fourth {
+        grid-area: 3 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #fifth {
+        grid-area: 4 / 1 / span 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
-
-#projects>* {
-    border: blue solid;
-}
-
-/*Phones*/
-@media screen and (max-width: 768px) {}
-
-/*Tablets*/
-@media screen and (min-width: 768px) {}
-
-/*Desktop*/
-@media screen and (min-width: 992px) {}
-
-/*Contact Me*/
+/*Contact Me Section Formatting*/
 #contact-header {
     display: flex;
     justify-content: center;
