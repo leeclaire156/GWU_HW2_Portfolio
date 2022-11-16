@@ -1,4 +1,4 @@
-# GWU_HW2_Portfolio
+# Portfolio Page
 
 ## Description
 This project is a portfolio page that will showcase the work Claire Lee has deployed. As more projects are completed, they will be displayed here under the Projects section of the page. This allows for the convenience of a central hub for her projects and their repositories. This project also demonstrated an intimate understanding of HTML and the following CSS concepts: flexbox, media queries, and CSS variables.
