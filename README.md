@@ -11,7 +11,7 @@ This project is a portfolio page that will showcase the work Claire Lee has depl
 
 * The following display should appear on screens at screen sizes 992px and above:
 
-    ![On a desktop, the application displays four projects in one row following the first one.](./assets/images/Portfolio-Page-Desktop.PNG)
+    ![On a desktop, the application displays four projects in one row following the first one.](./Assets/images/Portfolio-Page-Desktop.PNG)
 
 * The following display should appear on screens at screen sizes 768px to 992px:
 
@@ -20,7 +20,7 @@ This project is a portfolio page that will showcase the work Claire Lee has depl
 
 * The following display should appear on screens at screen sizes 768px and below:
 
-    ![On a mobile device, the application displays four projects in one column and four rows following the first one](./assets/images/Portfolio-Page-Mobile.jpg)
+    ![On a mobile device, the application displays four projects in one column and four rows following the first one](./Assets/images/Portfolio-Page-Mobile.jpg)
 
 
 ## Credits
