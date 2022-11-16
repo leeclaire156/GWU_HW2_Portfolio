@@ -5,6 +5,7 @@ Week 2 Assignment from George Washington University's Full Stack Development Boo
 
 Coming Soon SVG belongs to Undraw https://undraw.co/search
 grid area tutorial: https://www.w3schools.com/cssref/pr_grid-area.php
+https://leeclaire156.github.io/Portfolio_Page/
 
 # 02 Advanced CSS: Portfolio
 

@@ -409,5 +409,7 @@ button:focus {
 
     .links {
         display: flex;
+        flex-direction: column;
     }
+
 }
